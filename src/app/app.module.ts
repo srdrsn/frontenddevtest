@@ -6,10 +6,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from './shared/material-module';
 import { AppComponent } from './app.component';
-import { FormComponent } from './form/form.component';
+import { FormDialogComponent } from './form-dialog/form-dialog.component';
 
 @NgModule({
-  declarations: [AppComponent, FormComponent],
+  declarations: [AppComponent, FormDialogComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -18,6 +18,5 @@ import { FormComponent } from './form/form.component';
     BrowserAnimationsModule,
   ],
   bootstrap: [AppComponent],
-  entryComponents: [FormComponent],
 })
 export class AppModule {}

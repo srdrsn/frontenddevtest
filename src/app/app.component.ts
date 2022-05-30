@@ -1,7 +1,7 @@
 import { Component, VERSION } from '@angular/core';
-import { timer } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
-import { FormComponent } from './form/form.component';
+import { DialogData } from './form-dialog/dialog-data';
+import { FormDialogComponent } from './form-dialog/form-dialog.component';
 
 @Component({
   selector: 'app',
@@ -9,12 +9,19 @@ import { FormComponent } from './form/form.component';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor(private matDialog: MatDialog) {}
+  person: DialogData;
+  constructor(public dialog: MatDialog) {}
 
   openDialog(): void {
-    const dialogRef = this.matDialog.open(FormComponent, {
-      width: '250px',
-      height: '300px',
+    const dialogRef = this.dialog.open(FormDialogComponent, {
+      width: '650px',
+      height: '750px',
+      data: { data: this.person },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      this.person = result;
+      console.log(this.person);
     });
   }
 }

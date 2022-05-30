@@ -1,0 +1,85 @@
+<div mat-dialog-title class="title">
+  <p>Are you coming? Give us more details.</p>
+  <button mat-button (click)="onNoClick()">X</button>
+</div>
+<div mat-dialog-content>
+  <div class="form-info">
+    <h3>Dear invited, <br />We will appreciate if you confirm your presence</h3>
+    <span
+      >We are very happy that you have the intention to come! Please fill the
+      form below in order to us plan the best way to organize our event.</span
+    >
+  </div>
+
+  <form [formGroup]="invitationForm">
+    <div>
+      <mat-icon matSuffix>person</mat-icon>
+      <mat-form-field>
+        <input matInput [(ngModel)]="data.name" placeholder="Name" />
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-icon matSuffix>phone</mat-icon>
+      <mat-form-field>
+        <input matInput [(ngModel)]="data.phone" placeholder="Phone Number" />
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-icon matSuffix>email</mat-icon>
+      <mat-form-field>
+        <input matInput [(ngModel)]="data.email" placeholder="Email" />
+      </mat-form-field>
+    </div>
+
+    <div class="extra-form-info">
+      <div>
+        <label>Gender</label>
+        <mat-radio-group [(ngModel)]="data.gender">
+          <mat-radio-button value="male">Male</mat-radio-button>
+          <mat-radio-button class="female" value="female"
+            >Female</mat-radio-button
+          >
+        </mat-radio-group>
+      </div>
+
+      <mat-form-field>
+        <mat-label>Who is coming with you?</mat-label>
+        <select [(ngModel)]="data.alone" matNativeControl>
+          <option value="yes">Just myself</option>
+          <option value="no">I'm coming with some colleagues</option>
+        </select>
+      </mat-form-field>
+    </div>
+
+    <div *ngIf="data.alone === 'no'" class="amount-colleagues">
+      <mat-form-field>
+        <input
+          matInput
+          type="number"
+          placeholder="How many colleagues?"
+          [(ngModel)]="data.amount"
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="attending">
+      <label>May we count on you?</label><br />
+      <mat-button-toggle-group [(ngModel)]="data.attending">
+        <mat-button-toggle class="yes" value="yes"
+          ><mat-icon>thumb_up</mat-icon> YES</mat-button-toggle
+        >
+        <mat-button-toggle class="no" value="no"
+          ><mat-icon>thumb_down</mat-icon> NO</mat-button-toggle
+        >
+      </mat-button-toggle-group>
+    </div>
+  </form>
+</div>
+
+<div>
+  <button mat-button class="submit" [mat-dialog-close]="data">
+    Submit response
+  </button>
+</div>

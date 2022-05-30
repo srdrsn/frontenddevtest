@@ -1,0 +1,74 @@
+.title {
+  background-color: hsl(211deg 91% 45%);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title p {
+  padding-left: 3%;
+}
+
+h3 {
+  margin: 0 0 1% 0;
+  padding: 0;
+}
+
+.mat-form-field {
+  width: 70%;
+}
+
+.form-info {
+  text-align: left;
+  padding-left: 3%;
+}
+
+.form {
+  height: 500px;
+}
+
+.mat-radio-group {
+  display: flex;
+  margin: 15px 0;
+}
+
+.female {
+  margin-left: 15px;
+  margin-right: 25px;
+}
+
+.extra-form-info {
+  display: flex;
+  width: 65%;
+  margin: auto;
+}
+
+.amount-colleagues {
+  display: flex;
+  margin-left: auto;
+  margin-right: 0;
+  width: 55%;
+}
+
+.extra-form-info div {
+  font-size: 0.8em;
+  text-align: left;
+}
+
+.mat-button-toggle-group {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.attending .yes {
+  color: green;
+}
+
+.attending .no {
+  color: red;
+}
+
+.submit {
+  background-color: white;
+  border: 1px solid lightgray;
+  padding: 1% 5%;
+}
