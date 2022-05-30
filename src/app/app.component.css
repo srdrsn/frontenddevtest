@@ -1,3 +1,96 @@
-p {
-  font-family: Lato;
+.invitation {
+  display: block;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+div p {
+  color: hsl(198deg 74% 74%);
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2 {
+  margin: 0;
+  text-transform: uppercase;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+h1 {
+  padding-top: 5%;
+}
+
+button {
+  color: white;
+  background-color: hsl(211deg 91% 45%);
+  border: none;
+  text-transform: uppercase;
+  padding: 5px 40px;
+  border-radius: 0;
+  box-shadow: 2px 2px 5px gray;
+}
+
+.info {
+  margin-bottom: 5%;
+}
+
+.info p {
+  margin-bottom: 5%;
+}
+
+.slogan {
+  color: hsl(0deg 0% 38%);
+  font-weight: bold;
+  font-style: italic;
+}
+
+.date {
+  width: 100%;
+  font-weight: bold;
+  margin: auto;
+  margin-bottom: 5%;
+  display: inline-block;
+  justify-content: space-between;
+}
+
+.date > .middle {
+  padding: 10px 20px;
+  border-right: 6px solid hsl(211deg 91% 45%);
+  border-left: 6px solid hsl(211deg 91% 45%);
+}
+
+.date div {
+  vertical-align: middle;
+  display: inline-block;
+  padding: 20px;
+}
+
+.text-big {
+  font-size: 1.3em;
+}
+
+.day {
+  font-size: 3em;
+}
+
+.companyLogo {
+  background-image: url('../assets/images/companylogo.png');
+  height: 150px;
+  width: 100%;
+  margin: 3% 0 2% 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.bottomImg {
+  background-image: url('../assets/images/bottom2022.jpg');
+  background-size: 100%;
+  width: 100%;
+  margin-top: -24%;
+  padding-top: 54.166666666667%;
+  height: 0;
 }
