@@ -11,6 +11,7 @@ import { MaterialModule } from './shared/material-module';
 import { AppComponent } from './app.component';
 import { FormDialogComponent } from './form-dialog/form-dialog.component';
 import { environment } from './environments/environment';
+import { InvitationService } from './shared/invitation.service';
 
 @NgModule({
   declarations: [AppComponent, FormDialogComponent],
@@ -25,6 +26,7 @@ import { environment } from './environments/environment';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
   ],
+  providers: [InvitationService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

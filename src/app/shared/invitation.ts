@@ -1,4 +1,4 @@
-export interface DialogData {
+export interface Invitation {
   name: string;
   phone: number;
   email: string;

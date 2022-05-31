@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogData } from './form-dialog/dialog-data';
 import { FormDialogComponent } from './form-dialog/form-dialog.component';
+import { Invitation } from './shared/invitation';
+import { InvitationService } from './shared/invitation.service';
 
 @Component({
   selector: 'app',
@@ -9,27 +10,20 @@ import { FormDialogComponent } from './form-dialog/form-dialog.component';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  person: DialogData = {
-    name: '',
-    gender: '',
+  person: Invitation = {
+    name: 'test',
+    gender: 'tte',
     phone: 0,
-    email: '',
+    email: 't',
     alone: '',
     attending: null,
     amount: 0,
   };
+  private invitationService: InvitationService;
   constructor(public dialog: MatDialog) {}
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(FormDialogComponent, {
-      width: '650px',
-      height: '750px',
-      data: this.person,
-      disableClose: true,
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(result);
-    });
+    console.log('test');
+    this.invitationService.AddInvitation(this.person);
   }
 }

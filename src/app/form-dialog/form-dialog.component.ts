@@ -1,6 +1,6 @@
 import { Component, Inject, HostListener } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DialogData } from './dialog-data';
+import { Invitation } from '../shared/invitation';
 import {
   AbstractControl,
   FormBuilder,
@@ -8,6 +8,7 @@ import {
   Validators,
   FormControl,
 } from '@angular/forms';
+import { InvitationService } from '../shared/invitation.service';
 
 @Component({
   selector: 'form',
@@ -15,7 +16,7 @@ import {
   styleUrls: ['./form-dialog.component.css'],
 })
 export class FormDialogComponent {
-  person: DialogData;
+  person: Invitation;
 
   invitationForm: FormGroup = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -33,7 +34,7 @@ export class FormDialogComponent {
 
   constructor(
     public dialogRef: MatDialogRef<FormDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData,
+    @Inject(MAT_DIALOG_DATA) public data: Invitation,
     public formBuilder: FormBuilder
   ) {
     this.person = data;
@@ -45,6 +46,6 @@ export class FormDialogComponent {
 
   save(): void {
     console.log('test');
-    this.dialogRef.close(false);
+    this.dialogRef.close(this.invitationForm.value);
   }
 }
