@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FormDialogComponent } from './form-dialog/form-dialog.component';
-import { Invitation } from './shared/invitation';
+import { Invitation } from './shared/invitation.model';
 import { InvitationService } from './shared/invitation.service';
 
 @Component({
@@ -19,11 +19,14 @@ export class AppComponent {
     attending: null,
     amount: 0,
   };
-  private invitationService: InvitationService;
-  constructor(public dialog: MatDialog) {}
+
+  constructor(
+    private readonly invitationService: InvitationService,
+    private readonly dialog: MatDialog
+  ) {}
 
   openDialog(): void {
     console.log('test');
-    this.invitationService.AddInvitation(this.person);
+    // this.invitationService.AddInvitation(this.person);
   }
 }

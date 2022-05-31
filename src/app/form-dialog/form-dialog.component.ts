@@ -1,6 +1,6 @@
-import { Component, Inject, HostListener } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Invitation } from '../shared/invitation';
+import { Invitation } from '../shared/invitation.model';
 import {
   AbstractControl,
   FormBuilder,
@@ -8,7 +8,6 @@ import {
   Validators,
   FormControl,
 } from '@angular/forms';
-import { InvitationService } from '../shared/invitation.service';
 
 @Component({
   selector: 'form',
