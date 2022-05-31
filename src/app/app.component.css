@@ -80,7 +80,7 @@ button {
 }
 
 .companyLogo {
-  background-image: url(../assets/images/companylogo.png);
+  background-image: url('');
   height: 150px;
   width: 100%;
   margin: 3% 0 2% 0;
@@ -90,7 +90,7 @@ button {
 }
 
 .bottomImg {
-  background-image: url('../assets/images/bottom2022.jpg');
+  background-image: url('');
   background-size: 100%;
   width: 100%;
   margin-top: -24%;
