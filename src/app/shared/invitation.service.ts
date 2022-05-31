@@ -7,7 +7,8 @@ import { Invitation } from './invitation.model';
   providedIn: 'root',
 })
 export class InvitationService {
-  constructor(private readonly firestore: AngularFirestore) {}
+  /*constructor(private readonly firestore: AngularFirestore) {}
+  
   AddInvitation(invitation: Invitation) {
     return new Promise<any>((resolve, reject) => {
       this.firestore
@@ -20,5 +21,5 @@ export class InvitationService {
           (error) => reject(error)
         );
     });
-  }
+  }*/
 }

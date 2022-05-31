@@ -26,7 +26,15 @@ export class AppComponent {
   ) {}
 
   openDialog(): void {
-    console.log('test');
-    // this.invitationService.AddInvitation(this.person);
+    const dialogRef = this.dialog.open(FormDialogComponent, {
+      width: '600px',
+      height: '750px',
+      data: this.person,
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+      this.person = result;
+    });
   }
 }
