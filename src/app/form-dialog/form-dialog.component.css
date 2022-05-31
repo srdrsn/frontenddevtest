@@ -45,7 +45,25 @@ h3 {
   margin-right: 25px;
 }
 
-.extra-form-info {
+.gender {
+  flex: 1;
+}
+
+.alone {
+  flex: 2;
+}
+
+.invitation-info {
+  display: flex;
+  justify-content: center;
+}
+
+.invitation-info .mat-icon {
+  margin-top: 4%;
+  margin-right: 2%;
+}
+
+.extra-invitation-info {
   display: flex;
   flex-direction: column;
   width: 90%;
@@ -55,10 +73,11 @@ h3 {
 
 .amount-colleagues {
   margin-left: 6.5%;
+  font-size: 0.8em;
   width: 90%;
 }
 
-.extra-form-info div {
+.extra-invitation-info div {
   font-size: 0.8em;
   text-align: left;
 }
@@ -82,20 +101,23 @@ h3 {
 }
 
 @media only screen and (min-width: 1200px) {
-  .extra-form-info div {
+  .extra-invitation-info div {
     font-size: 0.8em;
     text-align: left;
+  }
+  .extra-invitation-info .mat-form-field {
+    width: 100%;
   }
   .amount-colleagues {
     display: flex;
     margin-left: auto;
-    margin-right: 2%;
-    width: 50%;
+    margin-right: -%;
+    width: 58%;
   }
-  .extra-form-info {
+  .extra-invitation-info {
     display: flex;
     flex-direction: row;
-    width: 65%;
-    margin: auto;
+    width: 70%;
+    margin-left: 18%;
   }
 }

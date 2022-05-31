@@ -11,8 +11,8 @@
     >
   </div>
 
-  <mat-dialog-content [formGroup]="invitationForm">
-    <div>
+  <mat-dialog-content [formGroup]="invitationForm" class="form">
+    <div class="invitation-info">
       <mat-icon matSuffix>person</mat-icon>
       <mat-form-field>
         <input type="text" formControlName="name" matInput placeholder="Name" />
@@ -24,7 +24,7 @@
       >
     </div>
 
-    <div>
+    <div class="invitation-info">
       <mat-icon matSuffix>phone</mat-icon>
       <mat-form-field>
         <input
@@ -41,7 +41,7 @@
       >
     </div>
 
-    <div>
+    <div class="invitation-info">
       <mat-icon matSuffix>email</mat-icon>
       <mat-form-field>
         <input
@@ -58,7 +58,7 @@
       >
     </div>
 
-    <div class="extra-form-info">
+    <div class="extra-invitation-info">
       <div class="gender">
         <label>Gender</label>
         <mat-radio-group formControlName="gender">
@@ -74,18 +74,20 @@
         >
       </div>
 
-      <mat-form-field>
-        <mat-label>Who is coming with you?</mat-label>
-        <select formControlName="alone" matNativeControl>
-          <option value="yes">Just myself</option>
-          <option value="no">I'm coming with some colleagues</option>
-        </select>
-      </mat-form-field>
-      <mat-error
-        class="form-error"
-        *ngIf="form['alone'].touched && form['alone'].invalid"
-        >Are you bringing someone with you?</mat-error
-      >
+      <div class="alone">
+        <mat-form-field>
+          <mat-label>Who is coming with you?</mat-label>
+          <select formControlName="alone" matNativeControl>
+            <option value="yes">Just myself</option>
+            <option value="no">I'm coming with some colleagues</option>
+          </select>
+        </mat-form-field>
+        <mat-error
+          class="form-error"
+          *ngIf="form['alone'].touched && form['alone'].invalid"
+          >Are you bringing someone with you?</mat-error
+        >
+      </div>
     </div>
 
     <div *ngIf="form['alone'].value === 'no'" class="amount-colleagues">
