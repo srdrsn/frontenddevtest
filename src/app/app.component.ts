@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { take } from 'rxjs';
 import { FormDialogComponent } from './form-dialog/form-dialog.component';
 import { Invitation } from './shared/invitation.model';
 import { InvitationService } from './shared/invitation.service';
@@ -33,13 +34,19 @@ export class AppComponent {
       disableClose: true,
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      this.postInvitation(result);
-    });
+    dialogRef
+      .afterClosed()
+      .pipe(take(1))
+      .subscribe((result) => {
+        if (result?.attending) {
+          this.postInvitation(result);
+        }
+      });
   }
 
   postInvitation(invitation: Invitation): void {
-    // stackblitz has troubles with adding firebase indepencies
+    // I had trouble adding the firebase dependencies in a proper way.
+    // I'd like to add firebase using `ng add @angular/fire`. Don't know how to do it on stackblitz
     // this is normally where I would do post request, something like:
     /*
       this.invitationService.addInvitation(invitation)

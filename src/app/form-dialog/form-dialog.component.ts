@@ -30,14 +30,10 @@ export class FormDialogComponent {
   }
 
   constructor(
-    public dialogRef: MatDialogRef<FormDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Invitation,
+    public dialogRef: MatDialogRef<FormDialogComponent>,
     public formBuilder: FormBuilder
   ) {}
-
-  OnNoClick(): void {
-    this.dialogRef.close();
-  }
 
   save(): void {
     //check for validation, normally not needed but stackblitz isn't initializing material correctly
