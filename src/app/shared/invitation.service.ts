@@ -3,9 +3,7 @@ import { Observable } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Invitation } from './invitation.model';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class InvitationService {
   /*constructor(private readonly firestore: AngularFirestore) {}
   

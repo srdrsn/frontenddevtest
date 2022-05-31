@@ -1,6 +1,5 @@
-import { Component, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Invitation } from '../shared/invitation.model';
+import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import {
   AbstractControl,
   FormBuilder,
@@ -30,7 +29,6 @@ export class FormDialogComponent {
   }
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: Invitation,
     public dialogRef: MatDialogRef<FormDialogComponent>,
     public formBuilder: FormBuilder
   ) {}
