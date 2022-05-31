@@ -80,7 +80,7 @@ button {
 }
 
 .companyLogo {
-  background-image: url('');
+  background-image: url('https://raw.githubusercontent.com/srdrsn/frontenddevtest/master/src/assets/images/logo-company.png');
   height: 150px;
   width: 100%;
   margin: 3% 0 2% 0;

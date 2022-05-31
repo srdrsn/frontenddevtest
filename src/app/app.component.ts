@@ -10,14 +10,16 @@ import { InvitationService } from './shared/invitation.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  public jsonData: any;
+
   person: Invitation = {
-    name: 'test',
-    gender: 'tte',
-    phone: 0,
+    name: '',
+    gender: '',
+    phone: null,
     email: 't',
     alone: '',
     attending: null,
-    amount: 0,
+    amount: null,
   };
 
   constructor(
