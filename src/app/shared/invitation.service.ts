@@ -7,18 +7,18 @@ import { Invitation } from './invitation.model';
   providedIn: 'root',
 })
 export class InvitationService {
-  // constructor(private readonly firestore: AngularFirestore) {}
-  // AddInvitation(invitation: Invitation) {
-  //   return new Promise<any>((resolve, reject) => {
-  //     this.firestore
-  //       .collection('invitations')
-  //       .add(invitation)
-  //       .then(
-  //         (response) => {
-  //           console.log(response);
-  //         },
-  //         (error) => reject(error)
-  //       );
-  //   });
-  // }
+  constructor(private readonly firestore: AngularFirestore) {}
+  AddInvitation(invitation: Invitation) {
+    return new Promise<any>((resolve, reject) => {
+      this.firestore
+        .collection('invitations')
+        .add(invitation)
+        .then(
+          (response) => {
+            console.log(response);
+          },
+          (error) => reject(error)
+        );
+    });
+  }
 }
