@@ -98,15 +98,15 @@ button {
   height: 0;
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1200px) {
   .date {
-    width: 100%;
     font-weight: bold;
+    width: 80%;
     margin: auto;
     margin-bottom: 5%;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: space-between;
   }
 
   .date > .middle {
