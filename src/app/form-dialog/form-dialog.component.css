@@ -17,6 +17,8 @@ h3 {
 .form-error {
   color: red;
   font-size: 0.6em;
+  text-align: left;
+  margin-left: 100px;
 }
 
 .mat-form-field {
@@ -45,15 +47,15 @@ h3 {
 
 .extra-form-info {
   display: flex;
-  width: 65%;
-  margin: auto;
+  flex-direction: column;
+  width: 90%;
+  margin-right: auto;
+  margin-left: 20%;
 }
 
 .amount-colleagues {
-  display: flex;
-  margin-left: auto;
-  margin-right: 0;
-  width: 55%;
+  margin-left: 6.5%;
+  width: 90%;
 }
 
 .extra-form-info div {
@@ -77,4 +79,23 @@ h3 {
   background-color: white;
   border: 1px solid lightgray;
   padding: 1% 5%;
+}
+
+@media only screen and (min-width: 1200px) {
+  .extra-form-info div {
+    font-size: 0.8em;
+    text-align: left;
+  }
+  .amount-colleagues {
+    display: flex;
+    margin-left: auto;
+    margin-right: 2%;
+    width: 50%;
+  }
+  .extra-form-info {
+    display: flex;
+    flex-direction: row;
+    width: 65%;
+    margin: auto;
+  }
 }

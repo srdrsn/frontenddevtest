@@ -9,7 +9,7 @@ import { Invitation } from './invitation.model';
 export class InvitationService {
   /*constructor(private readonly firestore: AngularFirestore) {}
   
-  AddInvitation(invitation: Invitation) {
+  addInvitation(invitation: Invitation) {
     return new Promise<any>((resolve, reject) => {
       this.firestore
         .collection('invitations')

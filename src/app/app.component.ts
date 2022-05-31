@@ -10,13 +10,11 @@ import { InvitationService } from './shared/invitation.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  public jsonData: any;
-
-  person: Invitation = {
+  invitation: Invitation = {
     name: '',
     gender: '',
-    phone: null,
-    email: 't',
+    phone: '',
+    email: '',
     alone: '',
     attending: null,
     amount: null,
@@ -31,12 +29,20 @@ export class AppComponent {
     const dialogRef = this.dialog.open(FormDialogComponent, {
       width: '600px',
       height: '750px',
-      data: this.person,
+      data: this.invitation,
+      disableClose: true,
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
-      this.person = result;
+      this.postInvitation(result);
     });
+  }
+
+  postInvitation(invitation: Invitation): void {
+    // stackblitz has troubles with adding firebase indepencies
+    // this is normally where I would do post request, something like:
+    /*
+      this.invitationService.addInvitation(invitation)
+    */
   }
 }

@@ -28,7 +28,7 @@
       <mat-icon matSuffix>phone</mat-icon>
       <mat-form-field>
         <input
-          type="number"
+          type="text"
           formControlName="phone"
           matInput
           placeholder="Phone Number"
@@ -91,6 +91,7 @@
     <div *ngIf="form['alone'].value === 'no'" class="amount-colleagues">
       <mat-form-field>
         <input
+          [required]="form['alone'].value === 'no'"
           matInput
           formControlName="amount"
           type="number"
@@ -101,7 +102,7 @@
 
     <div class="attending">
       <label>May we count on you?</label><br />
-      <mat-button-toggle-group formControlName="attending">
+      <mat-button-toggle-group formControlName="attending" required>
         <mat-button-toggle class="yes" value="true"
           ><mat-icon>thumb_up</mat-icon> YES</mat-button-toggle
         >
@@ -119,7 +120,5 @@
 </div>
 
 <div>
-  <button formnovalidate mat-button class="submit" click="save()">
-    Submit response
-  </button>
+  <button mat-button class="submit" (click)="save()">Submit response</button>
 </div>

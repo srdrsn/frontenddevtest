@@ -1,6 +1,6 @@
 export interface Invitation {
   name: string;
-  phone: number;
+  phone: string;
   email: string;
   gender: string;
   alone: string;

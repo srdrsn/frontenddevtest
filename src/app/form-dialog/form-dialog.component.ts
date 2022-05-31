@@ -15,11 +15,9 @@ import {
   styleUrls: ['./form-dialog.component.css'],
 })
 export class FormDialogComponent {
-  person: Invitation;
-
   invitationForm: FormGroup = new FormGroup({
     name: new FormControl('', Validators.required),
-    phone: new FormControl(0, Validators.required),
+    phone: new FormControl('', Validators.required),
     email: new FormControl('', Validators.required),
     gender: new FormControl('', Validators.required),
     attending: new FormControl('', Validators.required),
@@ -35,16 +33,18 @@ export class FormDialogComponent {
     public dialogRef: MatDialogRef<FormDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Invitation,
     public formBuilder: FormBuilder
-  ) {
-    this.person = data;
-  }
+  ) {}
 
   OnNoClick(): void {
     this.dialogRef.close();
   }
 
   save(): void {
-    console.log('test');
-    this.dialogRef.close(this.invitationForm.value);
+    //check for validation, normally not needed but stackblitz isn't initializing material correctly
+    this.invitationForm.markAllAsTouched;
+    console.log(this.invitationForm.value);
+    if (this.invitationForm.valid) {
+      this.dialogRef.close(this.invitationForm.value);
+    }
   }
 }
