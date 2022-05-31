@@ -1,85 +1,123 @@
 <div mat-dialog-title class="title">
   <p>Are you coming? Give us more details.</p>
-  <button mat-button (click)="onNoClick()">X</button>
+  <button mat-button mat-dialog-close>X</button>
 </div>
-<div mat-dialog-content>
+<div>
   <div class="form-info">
     <h3>Dear invited, <br />We will appreciate if you confirm your presence</h3>
     <span
       >We are very happy that you have the intention to come! Please fill the
-      form below in order to us plan the best way to organize our event.</span
+      form below to let us plan the best way to organize our event.</span
     >
   </div>
 
-  <form [formGroup]="invitationForm">
+  <mat-dialog-content [formGroup]="invitationForm">
     <div>
       <mat-icon matSuffix>person</mat-icon>
       <mat-form-field>
-        <input matInput [(ngModel)]="data.name" placeholder="Name" />
+        <input type="text" formControlName="name" matInput placeholder="Name" />
       </mat-form-field>
+      <mat-error
+        class="form-error"
+        *ngIf="form['name'].touched && form['name'].invalid"
+        >How do you want us to call you?</mat-error
+      >
     </div>
 
     <div>
       <mat-icon matSuffix>phone</mat-icon>
       <mat-form-field>
-        <input matInput [(ngModel)]="data.phone" placeholder="Phone Number" />
+        <input
+          type="number"
+          formControlName="phone"
+          matInput
+          placeholder="Phone Number"
+        />
       </mat-form-field>
+      <mat-error
+        class="form-error"
+        *ngIf="form['phone'].touched && form['phone'].invalid"
+        >How may we reach you?</mat-error
+      >
     </div>
 
     <div>
       <mat-icon matSuffix>email</mat-icon>
       <mat-form-field>
-        <input matInput [(ngModel)]="data.email" placeholder="Email" />
+        <input
+          type="email"
+          formControlName="email"
+          matInput
+          placeholder="Email"
+        />
       </mat-form-field>
+      <mat-error
+        class="form-error"
+        *ngIf="form['email'].touched && form['email'].invalid"
+        >What is your email address?</mat-error
+      >
     </div>
 
     <div class="extra-form-info">
-      <div>
+      <div class="gender">
         <label>Gender</label>
-        <mat-radio-group [(ngModel)]="data.gender">
+        <mat-radio-group formControlName="gender">
           <mat-radio-button value="male">Male</mat-radio-button>
           <mat-radio-button class="female" value="female"
             >Female</mat-radio-button
           >
         </mat-radio-group>
+        <mat-error
+          class="form-error"
+          *ngIf="form['gender'].touched && form['gender'].invalid"
+          >What is your gender?</mat-error
+        >
       </div>
 
       <mat-form-field>
         <mat-label>Who is coming with you?</mat-label>
-        <select [(ngModel)]="data.alone" matNativeControl>
+        <select formControlName="alone" matNativeControl>
           <option value="yes">Just myself</option>
           <option value="no">I'm coming with some colleagues</option>
         </select>
       </mat-form-field>
+      <mat-error
+        class="form-error"
+        *ngIf="form['alone'].touched && form['alone'].invalid"
+        >Are you bringing someone with you?</mat-error
+      >
     </div>
 
     <div *ngIf="data.alone === 'no'" class="amount-colleagues">
       <mat-form-field>
         <input
           matInput
+          formControlName="amount"
           type="number"
           placeholder="How many colleagues?"
-          [(ngModel)]="data.amount"
         />
       </mat-form-field>
     </div>
 
     <div class="attending">
       <label>May we count on you?</label><br />
-      <mat-button-toggle-group [(ngModel)]="data.attending">
-        <mat-button-toggle class="yes" value="yes"
+      <mat-button-toggle-group formControlName="attending">
+        <mat-button-toggle class="yes" value="true"
           ><mat-icon>thumb_up</mat-icon> YES</mat-button-toggle
         >
-        <mat-button-toggle class="no" value="no"
+        <mat-button-toggle class="no" value="false"
           ><mat-icon>thumb_down</mat-icon> NO</mat-button-toggle
         >
       </mat-button-toggle-group>
+      <mat-error
+        class="form-error"
+        *ngIf="form['attending'].touched && form['attending'].invalid"
+        >Are you coming or not?</mat-error
+      >
     </div>
-  </form>
+  </mat-dialog-content>
 </div>
 
 <div>
-  <button mat-button class="submit" [mat-dialog-close]="data">
-    Submit response
-  </button>
+  <button mat-button class="submit" click="save()">Submit response</button>
 </div>

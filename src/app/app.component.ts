@@ -1,4 +1,4 @@
-import { Component, VERSION } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogData } from './form-dialog/dialog-data';
 import { FormDialogComponent } from './form-dialog/form-dialog.component';
@@ -9,19 +9,27 @@ import { FormDialogComponent } from './form-dialog/form-dialog.component';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  person: DialogData;
+  person: DialogData = {
+    name: '',
+    gender: '',
+    phone: 0,
+    email: '',
+    alone: '',
+    attending: null,
+    amount: 0,
+  };
   constructor(public dialog: MatDialog) {}
 
   openDialog(): void {
     const dialogRef = this.dialog.open(FormDialogComponent, {
       width: '650px',
       height: '750px',
-      data: { data: this.person },
+      data: this.person,
+      disableClose: true,
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      this.person = result;
-      console.log(this.person);
+      console.log(result);
     });
   }
 }

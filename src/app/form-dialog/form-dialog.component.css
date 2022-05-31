@@ -14,8 +14,14 @@ h3 {
   padding: 0;
 }
 
+.form-error {
+  color: red;
+  font-size: 0.6em;
+}
+
 .mat-form-field {
   width: 70%;
+  margin-bottom: 0;
 }
 
 .form-info {
