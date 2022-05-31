@@ -90,7 +90,7 @@ button {
 }
 
 .bottomImg {
-  background-image: url('');
+  background-image: url('https://raw.githubusercontent.com/srdrsn/frontenddevtest/master/src/assets/images/bottom-2022.jpg');
   background-size: 100%;
   width: 100%;
   margin-top: -24%;
